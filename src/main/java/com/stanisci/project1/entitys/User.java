@@ -1,6 +1,8 @@
 package com.stanisci.project1.entitys;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +21,12 @@ private static final long serialVersionUID =1L;
     private String email;
      private String phone;
     private String password;
-   
+   private List<Order> orders = new ArrayList<>();
+public User(){
+
+    
+}
+    
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
@@ -28,6 +35,8 @@ private static final long serialVersionUID =1L;
         this.password = password;
     }
 
+
+    
     public Long getId() {
         return id;
     }
@@ -91,6 +100,10 @@ private static final long serialVersionUID =1L;
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
     }
 
 }
